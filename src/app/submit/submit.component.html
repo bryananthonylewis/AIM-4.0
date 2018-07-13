@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+<app-header-title
+  pageName="Submit"
+  title="Your Inventory"
+  [visibility]="false">
+  Please revie your inventory results,
+  complete the form, and click <strong>Submit Inventory</strong>.
+</app-header-title>
+
+<main class="pt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-5">
+        <app-inventory-summary></app-inventory-summary>
+        <app-submit-inventory-form></app-submit-inventory-form>
+      </div> <!-- /.col -->
+      <div class="col-12 col-md-7">
+        <div class="row">
+          <div class="col-12 col-xl-6">
+            <app-invoice-summary></app-invoice-summary>
+          </div> <!-- /.col -->
+          <div class="col-12 col-xl-6">
+            <app-restock-summary></app-restock-summary>
+          </div> <!-- /.col -->
+        </div> <!-- /.row -->
+      </div>  <!-- /.col -->
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+</main>
+
+<app-main-nav></app-main-nav>

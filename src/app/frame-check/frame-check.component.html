@@ -1,0 +1,74 @@
+<div class="frame-check">
+  <form action="#">
+    <div class="row align-items-center no-gutters mb-3 check-all">
+      <div class="col col-auto frame-checkbox mr-3">
+        <div
+          class="circle-loader toggle"
+          id="check-all"
+          (click)="onAllSelectedChanged($event)"
+          [ngClass]="{loadComplete: allSelected, hide: !allSelected}"
+        >
+          {{allSelected}}
+          <div
+            class="checkmark draw"
+            [ngClass]="{loadComplete: allSelected, hide: !allSelected}"
+          ></div> <!-- /.checkmark -->
+          <input
+            type="checkbox"
+            name="frame"
+            [checked]="allSelected"
+            (click)="onAllSelectedChanged($event)"
+          >
+        </div> <!-- /.circle-loader -->
+      </div> <!-- /.col -->
+
+      <div class="col col-auto frame-description">
+        <p class="mb-0 line-height-normal">
+          <strong>
+            Check all 00 Altair Frames
+          </strong>
+        </p>
+      </div>
+    </div> <!-- /.row .frame -->
+
+
+
+    <div *ngFor="let frame of checkframes; let i = index" class="row align-items-center no-gutters mb-3 frame">
+      <div class="col col-auto frame-checkbox mr-3">
+        <div
+          class="circle-loader toggle"
+          (click)="onSelectionChanged($event, frame)"
+          [ngClass]="{loadComplete: frame.selected, hide: !frame.selected}"
+        >
+          {{frame.selected}}
+          <div
+            class="checkmark draw"
+            [ngClass]="{loadComplete: frame.selected, hide: !frame.selected}"
+          ></div> <!-- /.checkmark -->
+          <input
+            type="checkbox"
+            name="frame"
+            [checked]="frame.selected"
+            (click)="onSelectionChanged($event, frame)"
+          >
+        </div> <!-- /.circle-loader -->
+      </div> <!-- /.col -->
+
+      <div class="col col-auto frame-image mr-3">
+        <img src="{{frame.src}}" alt="{{frame.alt}}">
+      </div>
+
+      <div class="col col-auto frame-description">
+        <p class="mb-0 line-height-normal">
+          <small>
+            <strong>
+              {{frame.model}} {{frame.desc}}
+            </strong>
+            <br>
+            {{frame.details}}
+          </small>
+        </p>
+      </div>
+    </div> <!-- /.row .frame -->
+  </form>
+</div> <!-- /.frame-check -->

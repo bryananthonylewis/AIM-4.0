@@ -1,0 +1,20 @@
+<!-- <button type="button" class="btn btn-primary" (click)="showChildModal()">Open child modal</button>-->
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1"
+     role="dialog" aria-labelledby="dialog-child-name">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="hideChildModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="mb-3">Returned to Altair</h5>
+        <p>
+          You will be sending your frames back to Altair.
+        </p>
+        <p class="mb-0">
+          Standard shipping fees apply.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

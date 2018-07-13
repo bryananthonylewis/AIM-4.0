@@ -1,0 +1,222 @@
+<div class="frame-review">
+  <form action="#">
+    <div class="container">
+      <div class="row mb-3">
+        <div class="col">
+          <h5>
+            000 Frames to Review
+          </h5>
+        </div>
+      </div>
+      <!-- frames to review loop include -->
+      <div *ngFor="let frame of reviewFramesReview; let i = index">
+        <div class="row align-items-start align-items-md-center frame">
+          <div class="col-6 col-md-6 col-xl-5">
+            <div class="row align-items-start align-items-md-center">
+              <div class="col-12 col-md-5 col-xl-4">
+                <img src="{{frame.src}}" alt="{{frame.alt}}">
+              </div> <!-- /.col -->
+              <div class="col-12 col-md-7 col-xl-8 frame-description">
+                <p class="mb-0 line-height-normal">
+                  <small>
+                    {{frame.brand}}
+                    <strong>
+                      {{frame.model}}
+                    </strong>
+                    <br class="d-none d-xl-block"/>
+                    {{frame.desc}} {{frame.details}}
+                  </small>
+                </p>
+              </div> <!-- /.col -->
+            </div> <!-- /.row -->
+          </div> <!-- /.col -->
+
+          <div class="col-6 col-md-6 col-xl-7">
+            <div class="row align-items-start align-items-lg-center">
+              <div class="col-12 col-md-7 col-lg-6 col-xl-auto">
+                <div class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="review-{{i}}" id="invoice-restock-{{i}}" value="option" checked>
+                  <label class="custom-control-label" for="invoice-restock-{{i}}">
+                    <small>
+                      Invoice and Restock
+                    </small>
+                  </label>
+                  <sup (click)="modalInvoiceAndRestock.showChildModal()">?</sup>
+                </div> <!-- /.custom-control -->
+              </div>  <!-- /.col -->
+              <div class="col-12 col-md-5 col-lg-6 col-xl-auto">
+                <div class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="review-{{i}}" id="invoice-only-{{i}}" value="option">
+                  <label class="custom-control-label" for="invoice-only-{{i}}">
+                    <small>Invoice Only</small>
+                  </label>
+                  <sup (click)="modalInvoiceOnly.showChildModal()">?</sup>
+                </div> <!-- /.custom-control -->
+              </div> <!-- /.col -->
+              <div class="col-12 col-md-7 col-lg-6 col-xl-auto">
+                <div class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="review-{{i}}" id="returned-{{i}}" value="option">
+                  <label class="custom-control-label" for="returned-{{i}}">
+                    <small>Returned to Altair</small>
+                  </label>
+                  <sup (click)="modalReturnToAltair.showChildModal()">?</sup>
+                </div> <!-- /.custom-control -->
+              </div> <!-- /.col -->
+            </div> <!-- /.row -->
+          </div> <!-- /.col -->
+        </div> <!-- /.row -->
+      <hr class="my-2">
+      </div> <!-- ngFor -->
+
+
+
+      <div class="row mb-3 pt-2">
+        <div class="col">
+          <h5>
+            New Frames <sup (click)="modalNewFrames.showChildModal()">?</sup>
+          </h5>
+        </div>
+      </div>
+      <!-- new frames loop include -->
+      <div *ngFor="let frame of reviewFramesNew; let i = index">
+        <div class="row align-items-start align-items-md-center frame">
+          <div class="col-6 col-md-6 col-xl-5">
+            <div class="row align-items-start align-items-md-center">
+              <div class="col-12 col-md-5 col-xl-4">
+                <img src="{{frame.src}}" alt="{{frame.alt}}">
+              </div> <!-- /.col -->
+              <div class="col-12 col-md-7 col-xl-8 frame-description">
+                <p class="mb-0 line-height-normal">
+                  <small>
+                    {{frame.brand}}
+                    <strong>
+                      {{frame.model}}
+                    </strong>
+                    <br class="d-none d-xl-block"/>
+                    {{frame.desc}} {{frame.details}}
+                  </small>
+                </p>
+              </div> <!-- /.col -->
+            </div> <!-- /.row -->
+          </div> <!-- /.col -->
+
+          <div class="col-6 col-md-6 col-xl-7">
+            <div class="row align-items-start align-items-lg-center">
+              <div class="col-12 col-md-7 col-lg-6 col-xl-auto">
+                <div class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="new-frames-{{i}}" id="new-frames-invoice-restock-{{i}}" value="option" checked>
+                  <label class="custom-control-label" for="new-frames-invoice-restock-{{i}}">
+                    <small>
+                      Invoice and Restock
+                    </small>
+                  </label>
+                  <sup (click)="modalInvoiceAndRestock.showChildModal()">?</sup>
+                </div> <!-- /.custom-control -->
+              </div>  <!-- /.col -->
+              <div class="col-12 col-md-5 col-lg-6 col-xl-auto">
+                <div class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="new-frames-{{i}}" id="new-frames-invoice-only-{{i}}" value="option">
+                  <label class="custom-control-label" for="new-frames-invoice-only-{{i}}">
+                    <small>Invoice Only</small>
+                  </label>
+                  <sup (click)="modalInvoiceOnly.showChildModal()">?</sup>
+                </div> <!-- /.custom-control -->
+              </div> <!-- /.col -->
+              <div class="col-12 col-md-7 col-lg-6 col-xl-auto">
+                <div class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="new-frames-{{i}}" id="new-frames-returned-{{i}}" value="option">
+                  <label class="custom-control-label" for="new-frames-returned-{{i}}">
+                    <small>Returned to Altair</small>
+                  </label>
+                  <sup (click)="modalReturnToAltair.showChildModal()">?</sup>
+                </div> <!-- /.custom-control -->
+              </div> <!-- /.col -->
+              <div class="col-12 col-md-5 col-lg-6 col-xl-auto">
+                <div class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="new-frames-{{i}}" id="new-frames-not-received-{{i}}" value="option">
+                  <label class="custom-control-label" for="new-frames-not-received-{{i}}">
+                    <small>Not Received</small>
+                  </label>
+                  <sup (click)="modalNotReceived.showChildModal()">?</sup>
+                </div> <!-- /.custom-control -->
+              </div> <!-- /.col -->
+            </div> <!-- /.row -->
+          </div> <!-- /.col -->
+        </div> <!-- /.row -->
+      <hr class="my-2">
+      </div> <!-- ngFor -->
+
+
+
+      <div class="row mb-3 pt-2">
+        <div class="col">
+          <h5>
+            Realignment Frames <sup (click)="modalRealignmentFrames.showChildModal()">?</sup>
+          </h5>
+        </div>
+      </div>
+      <!-- realignment frames loop include -->
+      <div *ngFor="let frame of reviewFramesRealignment; let i = index; last as isLast">
+        <div class="row align-items-start align-items-md-center frame">
+          <div class="col-6 col-md-6 col-xl-5">
+            <div class="row align-items-start align-items-md-center">
+              <div class="col-12 col-md-5 col-xl-4">
+                <img src="{{frame.src}}" alt="{{frame.alt}}">
+              </div> <!-- /.col -->
+              <div class="col-12 col-md-7 col-xl-8 frame-description">
+                <p class="mb-0 line-height-normal">
+                  <small>
+                    {{frame.brand}}
+                    <strong>
+                      {{frame.model}}
+                    </strong>
+                    <br class="d-none d-xl-block"/>
+                    {{frame.desc}} {{frame.details}}
+                  </small>
+                </p>
+              </div> <!-- /.col -->
+            </div> <!-- /.row -->
+          </div> <!-- /.col -->
+
+          <div class="col-6 col-md-6 col-xl-7">
+            <div class="row align-items-start align-items-lg-center">
+              <div class="col-12 col-md-6 col-lg-6 col-xl-auto">
+                <div class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="realignment-{{i}}" id="realignment-invoice-only-{{i}}" value="option">
+                  <label class="custom-control-label" for="realignment-invoice-only-{{i}}">
+                    <small>
+                      Invoice Only
+                    </small>
+                  </label>
+                  <sup (click)="modalInvoiceOnly.showChildModal()">?</sup>
+                </div> <!-- /.custom-control -->
+              </div> <!-- /.col -->
+              <div class="col-12 col-md-6 col-lg-6 col-xl-auto">
+                <div class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="realignment-{{i}}" id="realignment-returned-{{i}}" value="option">
+                  <label class="custom-control-label" for="realignment-returned-{{i}}">
+                    <small>Returned to Altair</small>
+                  </label>
+                  <sup (click)="modalReturnToAltair.showChildModal()">?</sup>
+                </div> <!-- /.custom-control -->
+              </div> <!-- /.col -->
+            </div> <!-- /.row -->
+          </div> <!-- /.col -->
+        </div> <!-- /.row -->
+        <hr *ngIf="!isLast" class="my-2">
+      </div> <!-- ngFor -->
+
+    </div> <!-- /.container -->
+  </form>
+</div> <!-- /.frame-review -->
+
+
+
+<app-modal-in-stock #modalInStock></app-modal-in-stock>
+<app-modal-invoice-and-restock #modalInvoiceAndRestock></app-modal-invoice-and-restock>
+<app-modal-invoice-only #modalInvoiceOnly></app-modal-invoice-only>
+<app-modal-return-to-altair #modalReturnToAltair></app-modal-return-to-altair>
+<app-modal-not-received #modalNotReceived></app-modal-not-received>
+<app-modal-total-inventory #modalTotalInventory></app-modal-total-inventory>
+<app-modal-new-frames #modalNewFrames></app-modal-new-frames>
+<app-modal-realignment-frames #modalRealignmentFrames></app-modal-realignment-frames>

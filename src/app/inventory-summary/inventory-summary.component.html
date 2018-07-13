@@ -1,0 +1,28 @@
+<div class="inventory-summary">
+  <h5>
+    Inventory Summary
+  </h5>
+  <p>
+    <strong>000</strong> In Stock <sup (click)="modalInStock.showChildModal()">?</sup>
+    <br>
+    <strong>000</strong> Invoice and Restock <sup (click)="modalInvoiceAndRestock.showChildModal()">?</sup>
+    <br>
+    <strong>000</strong> Invoice Only <sup (click)="modalInvoiceOnly.showChildModal()">?</sup>
+    <br>
+    <strong>000</strong> Returned to Altair <sup (click)="modalReturnToAltair.showChildModal()">?</sup>
+    <br>
+    <strong>000</strong> Not Received <sup (click)="modalNotReceived.showChildModal()">?</sup>
+    <br>
+    <span class="text-primary">
+      <strong>000</strong>
+      Total Inventory
+    </span> <sup (click)="modalTotalInventory.showChildModal()">?</sup>
+  </p>
+</div>
+
+<app-modal-in-stock #modalInStock></app-modal-in-stock>
+<app-modal-invoice-and-restock #modalInvoiceAndRestock></app-modal-invoice-and-restock>
+<app-modal-invoice-only #modalInvoiceOnly></app-modal-invoice-only>
+<app-modal-return-to-altair #modalReturnToAltair></app-modal-return-to-altair>
+<app-modal-not-received #modalNotReceived></app-modal-not-received>
+<app-modal-total-inventory #modalTotalInventory></app-modal-total-inventory>

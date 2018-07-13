@@ -1,1 +1,90 @@
-/* You can add global styles to this file, and also import other style files */
+@import "scss/variables.scss";
+
+// grid
+$grid-columns: 12;
+
+// border
+$border-radius: 0rem;
+$border-radius-lg: 0rem;
+$border-radius-sm: 0rem;
+
+// form
+$input-bg: $light-green;
+$input-border-color: $light-green;
+$input-border-width: 1px;
+$input-box-shadow: none;
+
+$input-focus-box-shadow: none;
+
+$custom-radio-indicator-icon-checked: none;
+
+// table
+$table-cell-padding: 0.3rem;
+
+// button padding
+$btn-padding-y: 0.675rem;
+
+/* Include Components
+--------------------------------------------- */
+// @import "scss/header";
+// @import "scss/header-title";
+// @import "scss/brand-side-nav";
+// @import "scss/brand-top-nav";
+// @import "scss/login-form";
+// @import "scss/frame-check";
+// @import "scss/main-nav";
+// @import "scss/modal";
+
+// include bootstrap - SCSS - Use ng-bootstrap for components
+@import "~bootstrap/scss/bootstrap.scss";
+
+// include font awesome
+@import "~font-awesome/scss/font-awesome";
+
+/* Global Styles
+--------------------------------------------- */
+
+// logos
+.aim-logo {
+  max-width: 255px;
+}
+
+// headings
+h5 {
+  color: $normal-green;
+}
+
+// sections
+main {
+  margin: 0 0 100px;
+}
+
+// utilities
+sup {
+  background: $gray-400;
+  border-radius: 50%;
+  color: $white;
+  cursor: pointer;
+  font-size: 35%;
+  padding: 1px 4px;
+  top: -1px;
+  vertical-align: super;
+}
+
+.btn {
+  font-size: 1.3rem;
+}
+
+.line-height-normal {
+  line-height: normal;
+}
+
+// tables
+table,
+.table {
+  font-size: 0.7rem;
+
+  thead {
+    background: $light-green;
+  }
+}
